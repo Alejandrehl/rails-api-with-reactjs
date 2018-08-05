@@ -28,6 +28,7 @@ class ListsContainer extends Component {
     .then(response => {
       console.log(response)
       const lists = [...this.state.lists, response.data]
+      this.setState({lists})
     })
     .catch(error => {
       console.log(error)
