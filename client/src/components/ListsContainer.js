@@ -18,7 +18,7 @@ class ListsContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/lists.json')
+    axios.get('/api/v1/lists')
     .then(response => {
       console.log(response)
       this.setState({
@@ -86,7 +86,7 @@ class ListsContainer extends Component {
               <EditListForm
                 list={list}
                 key={list.id}
-                editList={this.editList = this.editList.bind(this)}
+                editList={this.editList}
               />
             )
           }else{
@@ -94,7 +94,7 @@ class ListsContainer extends Component {
               <List
                 list={list}
                 key={list.id}
-                onRemoveList={this.removeList = this.removeList.bind(this)}
+                onRemoveList={this.removeList}
                 editingList={this.editingList}
               />
             )
